@@ -1,0 +1,4 @@
+D:\generics\GenericsAdvanced\Demo\Demo\obj\Debug\EqualityAndComparerDictionary.csproj.SuggestedBindingRedirects.cache
+D:\generics\GenericsAdvanced\Demo\Demo\obj\Debug\EqualityAndComparerDictionary.csproj.CoreCompileInputs.cache
+D:\generics\GenericsAdvanced\Demo\Demo\obj\Debug\Demo.exe
+D:\generics\GenericsAdvanced\Demo\Demo\obj\Debug\Demo.pdb
