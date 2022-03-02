@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace GenericMethodsAndDelegates.TypeConverterDemo
 {
-    public interface IBufferTypeConverter<T> : IEnumerable<T>
+    public interface IBufferTypeConverter<T> : IBuffer<T>
     {
-        bool IsEmpty { get; }
-
-        void Write(T value);
-
-        IEnumerable<TOutput> AsEnumerable<TOutput>();
-
-        T Read();
+        //Remove from IBuffer, because it is used in some exceptional cases
+        //Refactor move method to extension method
+        //IEnumerable<TOutput> AsEnumerableOf<TOutput>();      
     }
 }

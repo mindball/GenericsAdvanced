@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GenericMethodsAndDelegates.TypeConverterDemo
 {
-    public class BufferTypeConverter<T> : IBufferTypeConverter<T>
+    public class BufferTypeConverter<T> : IBufferTypeConverter<T>, IBuffer<T>
     {
         protected Queue<T> _queue = new Queue<T>();
 
@@ -21,10 +21,16 @@ namespace GenericMethodsAndDelegates.TypeConverterDemo
         {
             _queue.Enqueue(value);
         }
-        public IEnumerable<TOutput> AsEnumerable<TOutput>()
-        {
-            var converter = 
-        }
+        //Refactoring to extension method
+        //public IEnumerable<TOutput> AsEnumerableOf<TOutput>()
+        //{
+        //    var converter = TypeDescriptor.GetConverter(typeof(TOutput));
+        //    foreach (var item in _queue)
+        //    {
+        //        var result = converter.ConvertTo(item, typeof(TOutput));
+        //        yield return (TOutput)result;
+        //    }
+        //}
 
         public IEnumerator<T> GetEnumerator()
         {

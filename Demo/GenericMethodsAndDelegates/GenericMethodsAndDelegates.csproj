@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Delegate\BufferDelegate.cs" />
+    <Compile Include="Delegate\Extensions\BufferExtension.cs" />
+    <Compile Include="Delegate\IBufferDelegate.cs" />
+    <Compile Include="IBuffer.cs" />
+    <Compile Include="TypeConverterDemo\Extensions\BufferExtension.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeConverterDemo\BufferTypeConverter.cs" />

@@ -20,7 +20,7 @@ namespace Demo
             //    Console.WriteLine(item);
             //}
 
-            var buffer = new Buffer<int>();
+            var buffer = new Buffer<double>();
             ProcessInput(buffer);
             foreach (var item in buffer)
             {
@@ -121,7 +121,7 @@ namespace Demo
 
             #endregion
 
-            Console.ReadLine();
+            
         }
 
         private static void ProcessBuffer(IBuffer<double> buffer)
