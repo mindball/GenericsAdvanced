@@ -51,6 +51,38 @@ namespace GenericMethodsAndDelegates
             buffer.Dump(printOject);
             buffer.Dump(printGeneric);
 
+            #region Action, Func, Predicate
+            Console.WriteLine("------------------Action delegate--------------------");
+            buffer.DumpWithActionPredicate(PrintWriteConsoleGeneric);
+
+            Console.WriteLine("------------------Anonymous delegate--------------------");
+            Action<double> anonymous = delegate (double d)
+            {
+                Console.WriteLine(d);
+            };
+            buffer.DumpWithActionPredicate(anonymous);
+
+            Console.WriteLine("------------------Lambda expression delegate--------------------");
+            Action<double> lambdaExpr = d => 
+            {
+                Console.WriteLine(d);
+            };
+            buffer.DumpWithActionPredicate(lambdaExpr);
+            //Variant2
+            buffer.DumpWithActionPredicate(d =>  Console.WriteLine(d));
+
+            #endregion
+
+            #region Converter delegate
+            Console.WriteLine("-------------------Converter delegate-----------------------");
+            Converter<double, DateTime> converter = (d) => DateTime.Now.AddDays(d);
+            
+            foreach (var item in buffer.Map(converter))
+            {
+                Console.WriteLine(item);
+            }
+            #endregion
+
             #endregion
         }
 
