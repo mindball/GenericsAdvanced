@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMethodsAndDelegates"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertStringToAnyType", "ConvertStringToAnyType\ConvertStringToAnyType.csproj", "{CA3946B2-108F-484B-BDE7-1ACF17DF2BED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHandlerDemo", "EventHandlerDemo\EventHandlerDemo.csproj", "{9F13DDE8-BE69-4848-B5E2-85B99AFA9160}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CA3946B2-108F-484B-BDE7-1ACF17DF2BED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA3946B2-108F-484B-BDE7-1ACF17DF2BED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA3946B2-108F-484B-BDE7-1ACF17DF2BED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F13DDE8-BE69-4848-B5E2-85B99AFA9160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F13DDE8-BE69-4848-B5E2-85B99AFA9160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F13DDE8-BE69-4848-B5E2-85B99AFA9160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F13DDE8-BE69-4848-B5E2-85B99AFA9160}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
