@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertStringToAnyType", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHandlerDemo", "EventHandlerDemo\EventHandlerDemo.csproj", "{9F13DDE8-BE69-4848-B5E2-85B99AFA9160}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypesOfConverters", "TypesOfConverters\TypesOfConverters.csproj", "{87B4FDEC-19D8-4943-821E-E37D3CECD4B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{9F13DDE8-BE69-4848-B5E2-85B99AFA9160}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F13DDE8-BE69-4848-B5E2-85B99AFA9160}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F13DDE8-BE69-4848-B5E2-85B99AFA9160}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87B4FDEC-19D8-4943-821E-E37D3CECD4B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87B4FDEC-19D8-4943-821E-E37D3CECD4B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87B4FDEC-19D8-4943-821E-E37D3CECD4B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87B4FDEC-19D8-4943-821E-E37D3CECD4B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

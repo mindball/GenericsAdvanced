@@ -14,9 +14,9 @@ namespace ConvertStringToAnyType
         {
             var serviceSettings = new ServiceSettings()
             {
-                //Url = GetSettingOrDefault<string>("Url"),
-                //Enabled = GetSettingOrDefault<bool>("Enable"),
-                //Retries = GetSettingOrDefault<int>("Retries"),
+                Url = GetSettingOrDefault<string>("Url"),
+                Enabled = GetSettingOrDefault<bool>("Enable"),
+                Retries = GetSettingOrDefault<int>("Retries"),
                 StartDate = GetSettingOrDefault<DateTime>("StartDate")
             };
 
@@ -34,14 +34,14 @@ namespace ConvertStringToAnyType
         public static T GetSettingOrDefault<T>(string settingName)
             where T : IConvertible
         {
-            var settings = ConfigurationManager.AppSettings[settingName];
+            var settingValue = ConfigurationManager.AppSettings[settingName];
 
-            if(settings == null)
+            if(settingValue == null)
             {
                 return default(T);
             }
 
-            return (T)Convert.ChangeType(settings, typeof(T));
+            return (T)Convert.ChangeType(settingValue, typeof(T));
         }
 
     }

@@ -30,14 +30,14 @@ namespace GenericMethodsAndDelegates.Delegate.Extensions
         public static IEnumerable<TOutput> Map<T, TOutput>(this IBuffer<T> buffer, Converter<T, TOutput> converter)
         {
             //But this is projection, and there be a short way
-            //foreach (var item in buffer)
-            //{
-            //    TOutput result = converter(item);
-            //    yield return result;
-            //}
+            foreach (var item in buffer)
+            {
+                TOutput result = converter(item);
+                yield return result;
+            }
 
             //Shortway
-            return buffer.Select(b => converter(b));
+            //return buffer.Select(b => converter(b));
         }
 
         //boxing version

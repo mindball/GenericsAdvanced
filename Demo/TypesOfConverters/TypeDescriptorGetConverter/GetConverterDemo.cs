@@ -30,6 +30,8 @@ namespace TypesOfConverters.TypeDescriptorGetConverter
             //}
             //...and on and on for a dozen+ types
         }
+
+
         public T GetTFromString<T>(string mystring)
         {
             var foo = TypeDescriptor.GetConverter(typeof(T));
