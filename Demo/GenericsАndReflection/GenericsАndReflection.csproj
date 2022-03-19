@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Container\Container.cs" />
+    <Compile Include="Container\ILogger.cs" />
+    <Compile Include="Container\InvoiceService.cs" />
+    <Compile Include="Container\IRespository.cs" />
+    <Compile Include="Container\SqlRepository.cs" />
+    <Compile Include="Container\SqlServerLogger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -50,5 +56,6 @@
     <None Include="App.config" />
     <None Include="Readme.md" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,19 @@ namespace GenericsАndReflection
             {
                 Console.Write($"[{arg.Name}]");
             }
+
+            Console.WriteLine();
+
+            //call generic method
+            var employee = new Employee();
+            var genericMethod = typeof(Employee).GetMethod("Speak");
+            //generate exceptions - miss generic type, Late bound operations ca not be performed on types or methods for wich ContainsGenericParametrs is true
+            genericMethod = genericMethod.MakeGenericMethod(typeof(DateTime));
+            genericMethod.Invoke(employee, null);
+
+            Console.WriteLine();
+            //Make a IOC container
+
             ;
         }
 
@@ -36,12 +50,18 @@ namespace GenericsАndReflection
             var closedType = collectionType.MakeGenericType(itemType);
             return Activator.CreateInstance(closedType);
         }
+
+        
     }
 
     public class Employee
     {
         public string Name { get; set; }
-        
+
+        public void Speak<T>()
+        {
+            Console.WriteLine(typeof(T).Name);
+        }
     }
 
     public class Person
