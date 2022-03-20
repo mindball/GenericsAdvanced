@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHandlerDemo", "EventHa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypesOfConverters", "TypesOfConverters\TypesOfConverters.csproj", "{87B4FDEC-19D8-4943-821E-E37D3CECD4B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericsАndReflection", "GenericsАndReflection\GenericsАndReflection.csproj", "{05384237-60A2-4BFC-8078-7EF406FD61E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectionGenerics.Tests", "ReflectionGenerics.Tests\ReflectionGenerics.Tests.csproj", "{7B8C8D1D-26E3-4BAC-9EFC-49887BFC9C65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{87B4FDEC-19D8-4943-821E-E37D3CECD4B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87B4FDEC-19D8-4943-821E-E37D3CECD4B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87B4FDEC-19D8-4943-821E-E37D3CECD4B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05384237-60A2-4BFC-8078-7EF406FD61E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05384237-60A2-4BFC-8078-7EF406FD61E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05384237-60A2-4BFC-8078-7EF406FD61E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05384237-60A2-4BFC-8078-7EF406FD61E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B8C8D1D-26E3-4BAC-9EFC-49887BFC9C65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B8C8D1D-26E3-4BAC-9EFC-49887BFC9C65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B8C8D1D-26E3-4BAC-9EFC-49887BFC9C65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B8C8D1D-26E3-4BAC-9EFC-49887BFC9C65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

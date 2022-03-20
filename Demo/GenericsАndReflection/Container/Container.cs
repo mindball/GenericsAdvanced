@@ -7,12 +7,15 @@ using System.Threading.Tasks;
 
 namespace GenericsАndReflection.Container
 {
+    /// <summary>
+    /// This is a tutorial on reflection code, its purpose is to show how work reflection
+    /// by creating a container, so not all error-handling points are included
+    /// </summary>
     public class Container
     {
         //Container is map, it consist type of source and type of dest.
         private Dictionary<Type, Type> map = new Dictionary<Type, Type>();
 
-        ///
         /// This aproach For<T> and For(typeof(T)) allow us to work
         // compile time For<T> and
         /// runtime For(typeof(T))
@@ -38,35 +41,52 @@ namespace GenericsАndReflection.Container
         {
             if (this.map.TryGetValue(sourceType, out Type destinationType))
             {
-                return Activator.CreateInstance(destinationType);
+                return CreateInstance(destinationType);
             }
             //Good practice is to create custom exception for not exist source type at the container
-            throw new InvalidOperationException("Could not resolve " + sourceType.FullName);  
+            throw new InvalidOperationException("Could not resolve " + sourceType.FullName);
         }
 
-    public class ContainerBuilder
-    {
-        private Container container;
-        private Type sourceType;
-
-        public ContainerBuilder(Container container, Type sourceType)
+        /// <summary>
+        /// Here is one place where Resolve(Type sourceType) is more useful than Resolve<TSource> 
+        /// </summary>
+        /// <param name="destinationType"></param>
+        /// <remarks>
+        /// Used a callback Resolve to resolve constructor parameters, in case that is ILogger
+        /// </remarks>
+        private object CreateInstance(Type destinationType)
         {
-            this.container = container;
-            this.sourceType = sourceType;
+            var parameters = destinationType.GetConstructors()
+                .OrderByDescending(c => c.GetParameters().Length)
+                .First()
+                .GetParameters()
+                .Select(p => Resolve(p.ParameterType))
+                .ToArray();
+
+            return Activator.CreateInstance(destinationType, parameters);
         }
 
-        public ContainerBuilder Use<TDestination>()
+        public class ContainerBuilder
         {
-            return Use(typeof(TDestination));
+            private Container container;
+            private Type sourceType;
+
+            public ContainerBuilder(Container container, Type sourceType)
+            {
+                this.container = container;
+                this.sourceType = sourceType;
+            }
+
+            public ContainerBuilder Use<TDestination>()
+            {
+                return Use(typeof(TDestination));
+            }
+
+            public ContainerBuilder Use(Type destinationType)
+            {
+                this.container.map.Add(sourceType, destinationType);
+                return this;
+            }
         }
-
-        public ContainerBuilder Use(Type destinationType)
-        {
-            this.container.map.Add(sourceType, destinationType);
-            return this;
-        }
-
-
     }
-}
 }
