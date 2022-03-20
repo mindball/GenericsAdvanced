@@ -39,12 +39,27 @@ namespace GenericsАndReflection.Container
 
         public object Resolve(Type sourceType)
         {
+            object source = null;
             if (this.map.TryGetValue(sourceType, out Type destinationType))
             {
-                return CreateInstance(destinationType);
+                source = CreateInstance(destinationType);
             }
+            else if (!sourceType.IsAbstract)
+            {
+                source = CreateInstance(sourceType);
+            }
+            else if (sourceType.IsGenericType &&
+                     this.map.ContainsKey(sourceType.GetGenericTypeDefinition()))
+            {
+                var destination = this.map[sourceType.GetGenericTypeDefinition()];
+                var closedConstructedTyped = destination.MakeGenericType(sourceType.GenericTypeArguments);
+                source = CreateInstance(closedConstructedTyped);
+            }
+
             //Good practice is to create custom exception for not exist source type at the container
-            throw new InvalidOperationException("Could not resolve " + sourceType.FullName);
+            return source is null
+                ? throw new InvalidOperationException("Could not resolve " + sourceType.FullName)
+                : source;
         }
 
         /// <summary>

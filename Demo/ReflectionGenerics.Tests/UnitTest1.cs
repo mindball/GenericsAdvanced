@@ -37,5 +37,35 @@ namespace ReflectionGenerics.Tests
             //Assert
             Assert.AreEqual(typeof(SqlRepository<Employee>), repo.GetType());
         }
+
+        [TestMethod]
+        public void Can_Resolve_Concrete_TypeOfEmployee()
+        {
+            //Arrange
+            var ioc = new Container();
+            ioc.For<ILogger>().Use<SqlServerLogger>();
+            ioc.For<IRepository<Employee>>().Use<SqlRepository<Employee>>();
+
+            //Act
+            var service = ioc.Resolve<InvoiceService>();
+
+            //Assert
+            Assert.IsNotNull(service);
+        }
+
+        [TestMethod]
+        public void Can_Resolve_Concrete_TypeOfCustomer()
+        {
+            //Arrange
+            var ioc = new Container();
+            ioc.For<ILogger>().Use<SqlServerLogger>();
+            ioc.For(typeof(IRepository<>)).Use(typeof(SqlRepository<>));
+
+            //Act
+            var service = ioc.Resolve<InvoiceService>();
+
+            //Assert
+            Assert.IsNotNull(service);
+        }
     }
 }

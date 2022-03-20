@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Container\Container.cs" />
+    <Compile Include="Container\Customer.cs" />
     <Compile Include="Container\ILogger.cs" />
     <Compile Include="Container\InvoiceService.cs" />
     <Compile Include="Container\IRespository.cs" />
